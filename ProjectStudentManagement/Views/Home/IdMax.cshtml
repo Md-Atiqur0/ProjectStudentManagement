@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ProjectStudentManagement.Models.TBLStudent>
+
+@{
+    ViewBag.Title = "IdMax";
+    Layout = "~/Views/Layout/UsingLayout.cshtml";
+}
+
+<h2>IdMax</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDateSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddressSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDateSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCr)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthDateSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddressSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDateSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCr)
+        </td>
+    </tr>
+}
+
+</table>

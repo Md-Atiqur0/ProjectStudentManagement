@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ProjectStudentManagement.Models.TBLStudent>
+
+@{
+    ViewBag.Title = "ShowAllTBLStudent";
+    Layout = "~/Views/Layout/UsingLayout.cshtml";
+}
+
+<h2>ShowAllTBLStudent</h2>
+
+<p>
+    @using (Html.BeginForm("SearchByName","Home",FormMethod.Post))
+    {
+        <div style="float: left;margin-right:10px;margin-right:20px">
+            <lavel style="padding-top: 10px; margin-left: 25px; font-weight: 500">Search By Name</lavel>
+        </div>
+        <div style="float: left">
+            @Html.TextBox("SearchValue", "", htmlAttributes: new { @class = "form-control ", @placeholder = "Enter key search " })
+        </div>
+        <div style="float: left; margin-left: 5px">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDateSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddressSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDateSt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCr)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthDateSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddressSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDateSt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCr)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "DeleteTBLStudent", new { id=item.IdSt })
+        </td>
+    </tr>
+}
+
+</table>

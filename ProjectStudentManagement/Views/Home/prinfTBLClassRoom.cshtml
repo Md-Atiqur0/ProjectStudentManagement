@@ -1,0 +1,18 @@
+﻿@using ProjectStudentManagement.Models;
+@model List<TBLClassRoom>
+
+@Html.ActionLink("Show All", "ShowAllTBLStudent", null, htmlAttributes: new { @class = "btn btn-primary", @type = "button" })
+@Html.ActionLink("Order By ASC", "OrderByAscId", null, htmlAttributes: new { @class = "btn btn-primary", @type = "button" })
+@Html.ActionLink("Order By DSC", "OrderByDescId", null, htmlAttributes: new { @class = "btn btn-primary", @type = "button" })
+@Html.ActionLink("ID max", "IdMax", null, htmlAttributes: new { @class = "btn btn-primary", @type = "button" })
+@Html.ActionLink("ID min", "IdMin", null, htmlAttributes: new { @class = "btn btn-primary", @type = "button" })
+@foreach (var item in Model)
+{
+    <p>Name Class: @item.NAMECr</p>
+    <div>
+        @Html.ActionLink("Delete", "DeleteTBLClassRoom", new { id = item.IdCr }, htmlAttributes: new { @class = "btn btn-primary ", @type = "button" })
+        @Html.ActionLink("Add Student", "AddTBLStudent", new { id = item.IdCr }, htmlAttributes: new { @class = "btn btn-primary", @type = "button" })
+        @Html.ActionLink("See Student", "ListTBLStudent", new { id = item.IdCr }, htmlAttributes: new { @class = "btn btn-primary", @type = "button" })
+        <hr />
+    </div>
+}

@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/UsingLayout.cshtml";
+}
+
+<h2 style="text-align:center ">List of Class Room</h2>
+
+<div class="mb-2 p-3">
+    @Html.ActionLink("Create Classroom", "InsertTBLClassRoom", null, htmlAttributes: new { @class = "btn btn-primary" })
+    @Html.Action("prinfTBLClassRoom")
+</div>
